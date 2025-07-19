@@ -1,0 +1,22 @@
+<?php
+/**
+ * Plugin Name: Random Quote Widget
+ * Description: Displays a random motivational quote using a shortcode.
+ * Version: 1.0
+ * Author: Vedant Rathod
+ */
+
+function rq_display_random_quote() {
+    $quotes = [
+        "Stay hungry, stay foolish.",
+        "Code is like humor. When you have to explain it, it’s bad.",
+        "The best way to get started is to quit talking and begin doing.",
+        "Don’t wish it were easier. Wish you were better.",
+        "Consistency is more important than intensity."
+    ];
+
+    $random = $quotes[array_rand($quotes)];
+    return "<blockquote style='font-style: italic; color: #555;'>“$random”</blockquote>";
+}
+
+add_shortcode('random_quote', 'rq_display_random_quote');
